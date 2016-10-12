@@ -18,7 +18,7 @@ for (int stringcrawlerLong = 0; stringcrawlerLong < lengthLS; stringcrawlerLong+
         } else if (longstring.charAt(stringcrawlerLong + stringcrawler2) != shortstring.charAt(stringcrawler2)) {
           match = false
           }
-        }
+      }
         if (match) {
           fullMatchCount++
         }

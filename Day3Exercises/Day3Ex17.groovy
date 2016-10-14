@@ -1,9 +1,11 @@
 println "Welcome to Natemail beta"
+String fromText, toText;
 // checking to see if user's sender email address is valid
 boolean fromFinished = false
 while (!fromFinished) {
   boolean validAtSign = false
-  String fromText = System.console().readLine()
+  print ">>>"
+  fromText = System.console().readLine()
   int fromLength = fromText.length()
   if (fromText == "QUIT") {
     break;
@@ -36,11 +38,15 @@ while (!fromFinished) {
     println "OK"
   }
 }
-// checking to see user enter's valid to line
+// checking to see user enters valid to line
 boolean toFinished = false
 while (!toFinished) {
+  if (fromText == "QUIT") {
+    break;
+  }
   validAtSign = false
-  String toText = System.console().readLine()
+  print ">>>"
+  toText = System.console().readLine()
   int toLength = toText.length()
   if (toText == "QUIT") {
     break;
@@ -73,5 +79,67 @@ while (!toFinished) {
     println "OK"
   }
 }
-
+// user inputs DATA command
+boolean typedDATA = false
+String wordDATA
+while (!typedDATA) {
+  if ((fromText == "QUIT") || ( toText== "QUIT")) {
+    break;
+  }
+  print ">>>"
+  wordDATA = System.console().readLine()
+  if (wordDATA == "QUIT") {
+    break;
+  } else if (wordDATA != "DATA") {
+    println "You have entered an invalid command."
+    } else {
+      typedDATA = true
+    }
+}
+// user now enters the body of their email
+String allLinesOfEmail = ""
+String oneLine
+boolean finishedComposing = false
+while (!finishedComposing) {
+  if ((fromText == "QUIT") || ( toText== "QUIT") || (wordDATA == "QUIT")) {
+    break;
+  }
+  oneLine = System.console().readLine()
+  if (oneLine == "QUIT") {
+    break;
+  }
+  if (oneLine == ".") {
+    println "Email body complete"
+    break;
+  }
+  allLinesOfEmail = allLinesOfEmail + '\n' + oneLine       // the   \n will print a line break
+}
+// creates sending message and shows entire email contents
+boolean finishedSending = false
+while (!finishedSending) {
+  if ((fromText == "QUIT") || ( toText== "QUIT") || (wordDATA == "QUIT") || (oneLine == "QUIT")) {
+    break;
+  }
+  println "Sending email..."
+  println fromText
+  println toText
+  println allLinesOfEmail
+  finishedSending = true
+  println "Email sent!"
+}
+// looks for a quit message
+boolean userQuit = false
+while (!userQuit) {
+  if ((fromText == "QUIT") || ( toText== "QUIT") || (wordDATA == "QUIT") || (oneLine == "QUIT")) {
+    break;
+  }
+  print ">>>"
+  String lookingForQuit = System.console().readLine()
+  if (lookingForQuit == "QUIT") {
+    println "Goodbye!"
+    userQuit = true
+  } else {
+    println "Invalid command."
+    }
+}
 println "Natemail closed."

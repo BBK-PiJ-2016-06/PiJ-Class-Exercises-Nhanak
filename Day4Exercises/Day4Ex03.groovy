@@ -28,7 +28,7 @@ String binary2decimal(String biString) {
   return binaryResult
 }
 /// turns decimal number in to a binary number
-int decimal2binary(int decimal) {
+String decimal2binary(int decimal) {
   String remainder
   String decimalResultA = ""
   int quotient = 0
@@ -42,9 +42,8 @@ int decimal2binary(int decimal) {
           decimalDouble = decimalDouble/2
         }
     }
-  println decimalResultA
-  decimalResult = Integer.parseInt(decimalResultA)
-  return decimalResult
+  println "That number equals " + decimalResultA + " in binary"
+  return decimalResultA
 }
 // user choice selection
 boolean running = true
@@ -52,7 +51,7 @@ while (running) {
   String binaryInput
   println "Please enter a selection"
   println "Press 0 to quit"
-  println "Press 1 convert a binary number to a decimal"
+  println "Press 1 to convert a binary number to a decimal"
   println "Press 2 to see a binary value of a decimal"
   print ">>>"
   int choice = Integer.parseInt(System.console().readLine())
@@ -69,7 +68,6 @@ while (running) {
       print ">>>";
       int base10input = Integer.parseInt(System.console().readLine());
       decimal2binary(base10input);
-      println "That decimal equals this in binary: " + decimalResult;
       break;
     default: println "You have made an invalid choice, try again"
       print ">>>";

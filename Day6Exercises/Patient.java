@@ -5,7 +5,8 @@ public class Patient {
   private String illness;
   private Patient nextPatient;
 
-  public void Patient(String name, int age, String illness) {  // constructor method setting private fields of a patient
+
+  public Patient(String name, int age, String illness) {  // constructor method setting private fields of a patient
       this.name = name;
       this.age = age;
       this.illness = illness;

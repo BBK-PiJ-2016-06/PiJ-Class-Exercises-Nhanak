@@ -13,11 +13,22 @@ public class PhoneLauncher {
 
     SmartPhone nateIPhone = new SmartPhone();
     nateIPhone.call("630-717-9588");
-    nateIPhone.browseWeb("www.reddit.com");
-    nateIPhone.findPosition();
-    nateIPhone.ringAlarm("wakeUp");
+    nateIPhone.call("630-666-9588");
+    nateIPhone.call("630-712-1018");
+    nateIPhone.call("3453418");
+    nateIPhone.call("6302348");
+    nateIPhone.call("630-712-4534018");
+    nateIPhone.call("63222212-1018");
+    nateIPhone.call("6saf");
+    nateIPhone.call("63asrtw-1018");
+    nateIPhone.call("tenth number");
+    nateIPhone.call("Eleventh dialed");
     nateIPhone.printLastNumbers();
+
+    nateIPhone.browseWeb("www.reddit.com");
+    System.out.println(nateIPhone.findPosition());
+    nateIPhone.ringAlarm("wakeUp");
+
     nateIPhone.playGame("Break Glass");
-    nateIPhone.findPosition();
   }
 }

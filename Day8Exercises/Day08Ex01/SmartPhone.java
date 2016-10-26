@@ -10,7 +10,7 @@ public class SmartPhone extends MobilePhone {
   }
 
   public void storeCallHistory(String currentNumber) {
-    super.storeCallHistory(currentNumber);
+    super.storeCallHistory(currentNumber); // if you call super, it must be the first line in the method.
     System.out.println("Sending data to NSA");
   }
 

@@ -9,7 +9,7 @@ int power2(int exponent) {
   return this.result
 }
 /// reads the binary number entered, sends each digit one by one to get converted in to a decimal
-int binary2decimal(String biString) {
+int binary2decimal(String biString) {  // simplified this working with Mo
   int exponentSend = biString.length() - 1
   int resultInt = 0
   for (int stringCrawler = 0; stringCrawler < biString.length(); stringCrawler++) {

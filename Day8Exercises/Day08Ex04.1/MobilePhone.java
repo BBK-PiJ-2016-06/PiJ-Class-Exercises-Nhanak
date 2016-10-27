@@ -5,7 +5,7 @@ public class MobilePhone extends OldPhone {
           System.out.println("BUZZ BUZZ BUZZ");
     }
 
-    public void playGame(String game) {  // activates method to play a game
+    private void playGame(String game) {  // activates method to play a game
       System.out.println("Opening game: " + game);
     }
 
@@ -17,7 +17,7 @@ public class MobilePhone extends OldPhone {
 
     public MobilePhone(String brand) {
       super(brand);
-      }
+    }
 
     public void storeCallHistory(String currentNumber) { // stores the last 10 numbers dialed
       if (callHistory == null) {    // if callHistory is empty, it creates a history of 10 numbers

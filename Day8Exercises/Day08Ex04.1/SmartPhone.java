@@ -23,15 +23,10 @@ public class SmartPhone extends MobilePhone {
       return location;
   }
 
-  @Override
-  /* In order to access the parent class' private method, you must instantiate a new
-    * version of the base class INSIDE the descendent class.
-    * and then you can get at its methods from here
-    */
-  public void playGame(String game) {
-    MobilePhone gamerPhone = new MobilePhone("Temporary"); // don't forget the constructor in MobilePhone has explicit params
-    gamerPhone.playGame(game);
+  public void playGame(String game) {  // you need to essentially recreate the method here if it is private in its superclass
+    System.out.println("Opening game: " + game);
   }
+
 
   public void storeCallHistory(String currentNumber) {
     super.storeCallHistory(currentNumber);

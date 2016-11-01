@@ -24,33 +24,27 @@ public class MobilePhone extends OldPhone {
       if (callHistory == null) {    // if callHistory is empty, it creates a history of 10 numbers
         callHistory = new String[10];
         callHistory[9] = currentNumber;
-      } else {
-          for (int i = 9; i >= 0; i--) {  // if the list isn't full, searches for a null space
-            if (callHistory[i] == null) {
-              System.out.println("What does i equal here " + i);
-              callHistory[i] = currentNumber;
-              break;
-            }
-          }
-          if (callHistory[0] != null) {  // if there has been more than 10 calls, knocks out 10th call
+      } else if (callHistory[0] != null) {  // if there has been more than 10 calls, knocks out 10th call
             for (int storedPosition = 9; storedPosition > 0; storedPosition--) { // then moves each stored# down one
-                System.out.println("Stored position is " + storedPosition);
                 String replace = callHistory[storedPosition-1];
                 callHistory[storedPosition] = replace;
-                if (storedPosition == 1 ) {
-                  callHistory[0] = currentNumber;
+            }
+                callHistory[0] = currentNumber;
+          } else {
+              for (int i = 9; i >= 0; i--) {  // if the list isn't full, searches for a null space
+                if (callHistory[i] == null) {
+                  callHistory[i] = currentNumber;
                   break;
                 }
-            }
-          }
+              }
         }
-    }
+      }
 
     public void printLastNumbers() {
+      System.out.println("Call History \n >>>>>>");
       for (int i = 0; i <= 9; i++) {
         if (this.callHistory[i] == null) {
-          System.out.println("No further numbers stored");
-          break;
+          System.out.println("Call #" + i + ": no call stored");
         } else {
             System.out.println("Stored Call # " + i + ": " + this.callHistory[i]);
           }

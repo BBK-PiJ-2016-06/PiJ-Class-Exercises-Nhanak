@@ -12,7 +12,7 @@ public class PhoneLauncher {
     bananaPhone.printLastNumbers(); // history isn't working beyond 1 number, try adding other numbers later
 
     SmartPhone nateIPhone = new SmartPhone();
-    nateIPhone.call("630-717-9588");
+    nateIPhone.call("630-717-9588"); //
     nateIPhone.call("630-666-9588");
     nateIPhone.call("630-712-1018");
     nateIPhone.call("3453418");
@@ -21,8 +21,9 @@ public class PhoneLauncher {
     nateIPhone.call("63222212-1018");
     nateIPhone.call("6saf");
     nateIPhone.call("63asrtw-1018");
-    nateIPhone.call("tenth number");
-    nateIPhone.call("Eleventh dialed");
+    nateIPhone.call("Tenth call");
+    nateIPhone.call("Eleventh call");
+
     nateIPhone.printLastNumbers();
 
     nateIPhone.browseWeb("www.reddit.com");

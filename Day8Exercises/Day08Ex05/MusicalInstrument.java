@@ -1,6 +1,5 @@
-public class MusicalInstrument {
+public interface MusicalInstrument {
 
-  public void play() {
-    System.out.println("Anyway, here's Wonderwall...");
-  }
+  void play() ;
+
 }

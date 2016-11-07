@@ -62,12 +62,8 @@ public class IntegerTreeNode {
     }
   }
 
-  public String toString() {
+/**  public String toString() {    // non simplified version
     String leftSide, rightSide;
-    if (left == null && right == null) {
-      String printedTree = "[" + this.value + " L[] " + " R[] " + "]";
-      return printedTree;
-    }
     if (left != null) {
       leftSide = left.toString();
     } else {
@@ -78,8 +74,25 @@ public class IntegerTreeNode {
     } else {
       rightSide = "";
     }
-    String printedTree = "[" + this.value + " L[ " + leftSide + "] " + " R[" + rightSide + "] " + "]";
+    String printedTree = "[" + this.value + " L[" + leftSide + "] " + " R[" + rightSide + "] " + "]";
     return printedTree;
   }
+  */
+
+  public String toString() {  // this is the simplified version where it doesn't show the empties
+      String leftSide, rightSide;
+      if (left != null) {
+        leftSide = " " + left.toString();
+      } else {
+        leftSide = "";
+        }
+      if (right != null) {
+        rightSide = " " + right.toString();
+      } else {
+        rightSide = "";
+      }
+      String printedTree = "[" + this.value  + leftSide + rightSide + "]";
+      return printedTree;
+    }
 
 }

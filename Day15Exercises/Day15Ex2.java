@@ -6,7 +6,7 @@ public class Day15Ex2 {
   public static void main(String[] args) {
 
     Day15Ex2 exercise = new Day15Ex2();
-    exercise.launch("Turkey"); // switch this out for user input of 0,2,4,6 to see various results.
+    exercise.launch("Turkey"); 
   }
 
   public void launch(String newElement) {

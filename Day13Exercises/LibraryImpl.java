@@ -10,7 +10,7 @@ public class LibraryImpl implements Library {
         libraryID = 0;
         this.maxBooksPerUser = maxBooksPerUser;
         arrayOfUserNames = new String[50];
-        for (int i = 0; i < arrayOfUserNames.length; i++) { // initializes both arrays
+        for (int i = 0; i < arrayOfUserNames.length; i++) {
           arrayOfUserNames[i] = "blank";
         }
     }

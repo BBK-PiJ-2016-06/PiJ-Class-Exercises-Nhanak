@@ -3,17 +3,14 @@ public class LibraryImpl implements Library {
     private String libraryName;
     private int libraryID;
     private int maxBooksPerUser;
-    private int[] arrayOfIDs;
     private String[] arrayOfUserNames;
 
     public LibraryImpl(String libraryName, int maxBooksPerUser) {
         this.libraryName = libraryName;
         libraryID = 0;
         this.maxBooksPerUser = maxBooksPerUser;
-        arrayOfIDs = new int[50];
         arrayOfUserNames = new String[50];
-        for (int i = 0; i < arrayOfIDs.length; i++) { // initializes both arrays
-          arrayOfIDs[i] = -1;
+        for (int i = 0; i < arrayOfUserNames.length; i++) { // initializes both arrays
           arrayOfUserNames[i] = "blank";
         }
     }
@@ -25,15 +22,19 @@ public class LibraryImpl implements Library {
     public int getID(String name) {
       int numOfID = checkForPrevStoredName(name);
       if ( numOfID == -1) {
-        arrayOfIDs[libraryID] = libraryID;
-        arrayOfUserNames[libraryID] = name;
-        System.out.println("Registered: " + name + " . New ID is: ");
-        numOfID = libraryID;
-        libraryID++;
+        numOfID = registerNewUser(name);
       } else {
         System.out.println(name + " is already registered. ID is: ");
       }
       return numOfID;
+    }
+
+    private int registerNewUser(String name) {
+      arrayOfUserNames[libraryID] = name;
+      System.out.println("Registered: " + name + " . New ID is: ");
+      int newUserIDNumber = libraryID;
+      libraryID++;
+      return newUserIDNumber;
     }
 
     public int getMaxBooksPerUser() {
@@ -45,15 +46,13 @@ public class LibraryImpl implements Library {
     }
 
     public int checkForPrevStoredName(String name) {
-      boolean isRegistered = false;
-      int registeredUserID = -1;
-      for (int i = 0; i < arrayOfIDs.length; i++) {
-        if (name == arrayOfUserNames[i]) {
-          isRegistered = true;
-          registeredUserID = arrayOfIDs[i];
+      int userIdNumber = -1;
+      for (int i = 0; i < arrayOfUserNames.length; i++) {
+        if (name.equals(arrayOfUserNames[i])) {
+          userIdNumber = i;
         }
       }
-      return registeredUserID;
+      return userIdNumber;
     }
 
 

@@ -1,3 +1,5 @@
+//@author by PiJ
+
 public class Counter {
   private int n = 0;
 

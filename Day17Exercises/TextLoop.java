@@ -1,3 +1,5 @@
+//@author by Nathan Hanak and Tudor
+
 public class TextLoop implements Runnable {
   public static final int COUNT = 10;
   private final String name;

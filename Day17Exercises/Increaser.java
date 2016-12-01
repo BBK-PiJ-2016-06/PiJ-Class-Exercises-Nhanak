@@ -1,8 +1,8 @@
 public class Increaser implements Runnable {
-  private Counter c;
+  private Counter counter;
 
   public Increaser(Counter counter) {
-    this.c = counter;
+    this.counter = counter;
   }
 
   public static void main(String args[]) {
@@ -15,28 +15,18 @@ public class Increaser implements Runnable {
       Thread t = new Thread(increaserTask, name);
       System.out.println(t.getName() + " starting");
       t.start(); // once a thread is launched, program continues on, whether thread is complete or not
-      try {
-        t.sleep(10);
-      } catch (InterruptedException ex) {
-        // sleep less
-      }
     }
 
   }
 
   public void run() {
-    try {
-    synchronized(c) {
-        System.out.println("Starting at " + c.getCount());
+       synchronized(counter) {
+        System.out.println("Starting at " + counter.getCount());
         for (int i = 0; i < 1000; i++) {
-          c.increase();
+          counter.increase();
         }
-        System.out.println("Stopping at " + c.getCount());
-        notifyAll();
+        System.out.println("Stopping at " + counter.getCount());
       }
-    } catch (IllegalMonitorStateException ex) {
-      // do  nothing
-    }
-  }
+   }
 
 }

@@ -1,8 +1,8 @@
 public class IncreaserCutsOffEarly implements Runnable {
-  private Counter c;
+  private Counter counter;
 
   public IncreaserCutsOffEarly(Counter counter) {
-    this.c = counter;
+    this.counter = counter;
   }
 
   public static void main(String args[]) {
@@ -20,23 +20,13 @@ public class IncreaserCutsOffEarly implements Runnable {
   }
 
   public void run() {
-    try {
-      while (c.getCount()%1000 != 0) {
-        wait();
-      }
-      synchronized(c) {
-        System.out.println("Starting at " + c.getCount());
+       synchronized(this) { // synchronizing the object doesn't lock up counter, as it's an external object
+        System.out.println("Starting at " + counter.getCount());
         for (int i = 0; i < 1000; i++) {
-          c.increase();
+          counter.increase();
         }
-        System.out.println("Stopping at " + c.getCount());
-        notifyAll();
+        System.out.println("Stopping at " + counter.getCount());
       }
-    } catch (InterruptedException ex) {
-      // do nothing
-    } catch (IllegalMonitorStateException ex) {
-      // do  nothing
-    }
   }
 
 }

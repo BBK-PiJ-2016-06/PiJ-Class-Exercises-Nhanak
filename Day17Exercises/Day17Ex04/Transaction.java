@@ -20,7 +20,8 @@ public class Transaction implements Runnable {
       t.start();
       System.out.println("Balance is " + myBankAcct.getBalance());
     }
-    System.out.println("Final balance is " + myBankAcct.getBalance());
+    Thread t = new Thread(new Transaction(0, myBankAcct, "get balance"));
+    t.start();
   }
 
 
@@ -30,6 +31,10 @@ public class Transaction implements Runnable {
 
   public void withdraw(BankAccount accountName) {
     accountName.retrieve(amount);
+  }
+
+  public int getBalance(BankAccount accountName) {
+    return accountName.getBalance();
   }
 
   public void run() {

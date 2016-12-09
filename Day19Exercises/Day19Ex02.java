@@ -24,4 +24,5 @@ public class Day19Ex02 {
     }
     return result;
   }
+  
 }

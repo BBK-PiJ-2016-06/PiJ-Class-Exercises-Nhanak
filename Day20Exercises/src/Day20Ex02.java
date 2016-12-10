@@ -19,8 +19,8 @@ public class Day20Ex02 {
                                 new Dish("prawns", false, 400, Dish.Type.FISH),
                                 new Dish("salmon", false, 450, Dish.Type.FISH));
 
-        List<Dish> dishes = menu.stream().  // separating out by '.' but can write them all together if need be.
-                filter(dish -> dish.getType() == Dish.Type.MEAT) // the lambda knows it's a Dish, because it can tell from the stream.
+        List<Dish> dishes = menu.stream()  // separating out by '.' but can write them all together if need be.
+                .filter(dish -> dish.getType() == Dish.Type.MEAT) // the lambda knows it's a Dish, because it can tell from the stream.
                                                         // it makes a new stream that consists of only meat dishes
                 .limit(2)  //       now it takes that meat Dish stream, and chops it down to just 2
                 .collect(Collectors.toList()); // collect does something w/the stream - takes it and turns it in to a list. This is

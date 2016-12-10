@@ -13,7 +13,7 @@ class Point {
     theOrigin.y = 0;
     distanceTo (firstPoint, theOrigin)
   }
-  double moveTo(double x, double y) { // moves your original point to a second location via the values of fields
+  double moveTo() { // moves your original point to a second location via the values of fields
     this.x = 16
     this.y = 22
   }
@@ -22,10 +22,10 @@ class Point {
     movedPoint.x = 12.7
     movedPoint.y = 23.9
   }
-  Point clone(Point clonePoint1) { // takes a copy of your point and clones it on to whatever you run through this method
-    clonePoint1.setX(x);
-    clonePoint1.setY(y);
-    return clonePoint1
+  Point clone(Point tempPoint) { // takes a copy of your point and clones it on to whatever you run through this method
+    tempPoint.setX(x);
+    tempPoint.setY(y);
+    return tempPoint
   }
   Point opposite(Point oppositePoint) { // turns the point run through here to its opposite value
     oppositePoint.setX(x*-1)
@@ -44,7 +44,7 @@ point2.y = 36.9
 println "The original location of point1 is: " + point1.x + "," + point1.y;
 println "The distance between your first point and the second point is: " + point1.distanceTo(point1, point2);
 println "The distance between your first point and the origin is: " + point1.distanceToOrigin(point1);
-point1.moveTo(point1.x, point1.y)
+point1.moveTo();
 println "I have moved point1 to this location: " + point1.x + "," + point1.y;
 point1.moveTo(point1);
 println "Now I have moved point1 to this location: " + point1.x + "," + point1.y;

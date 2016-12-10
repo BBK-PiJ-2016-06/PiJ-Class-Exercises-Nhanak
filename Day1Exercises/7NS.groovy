@@ -14,21 +14,20 @@ if (first > second && first > third ) {
     }
   else if (first < second && first < third) {
       lowest = first
-      }
-  else {
+      } else {
         middle = first
-       }
+        }
 if (second > first && second > third) {
     highest = second
     } else if (second < first && second < third) {
       lowest = second
     } else  {
         middle = second
-            }
+      }
 if (third > first && third > second) {
   highest = third
   } else if (third < first && third < second) {
     lowest = third
   } else { middle = third
-        }
+    }
 println "and the order from lowest to highest is: " + lowest + ", " + middle + ", " + highest

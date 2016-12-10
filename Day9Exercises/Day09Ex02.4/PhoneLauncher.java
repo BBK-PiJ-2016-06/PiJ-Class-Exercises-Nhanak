@@ -36,7 +36,7 @@ public class PhoneLauncher {
      testing.call("2929-3992-2939");
      testing.call("6629-3349-6621");
      testing.call("0032-2384-299239");
-     testing.printLastNumbers();
+     testing.printLastNumbers(); // won't work from here on through the end.  
      System.out.println(">>>>>");
      SmartPhone tempPhone = (SmartPhone) testing;
      System.out.println(tempPhone.findPosition());

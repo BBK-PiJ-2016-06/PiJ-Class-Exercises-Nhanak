@@ -7,8 +7,8 @@ while (input > -1) {
   if (input > largestnumber) {
     if (input > largestnumber + 1) {
       consecutive = false
-      }
-    largestnumber = input
+    }
+  largestnumber = input
   } else if (input < largestnumber) {
     consecutive = false
     }

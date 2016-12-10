@@ -30,7 +30,7 @@ public class Patient { // this patient is doubly-linked
     return prevPatient;
   }
   public void setNextPatient(Patient nextPatient) {
-    this.nextPatient = nextPatient; // this.nextPatient is the formerly null nextPatient pointer. nextPatient is your
+    this.nextPatient = nextPatient; // when starting out, this.nextPatient is the formerly null nextPatient pointer. nextPatient is your
   }                                 // newest  - 'addedPatient'
   public void setPrevPatient(Patient prevPatient) {
     this.prevPatient = prevPatient;

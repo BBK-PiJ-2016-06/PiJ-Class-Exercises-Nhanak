@@ -3,7 +3,8 @@ public class Day11Ex1_3 {
   public static void main(String[] args) {
 
     IntegerTreeNode myTree = new IntegerTreeNode(6);
-
+    System.out.println("The depth of this tree is: " + myTree.depth());
+    
     myTree.add(9);
     myTree.add(8);
     myTree.add(13);

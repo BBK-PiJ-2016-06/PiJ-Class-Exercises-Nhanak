@@ -93,7 +93,7 @@ public class IntegerTreeNode {
       }
       String printedTree = "[" + this.value  + leftSide + rightSide + "]";
       return printedTree;
-    }
+  }
 
   public int depth() { // counts the number of levels deep we go by right and left side
     int rightCount, leftCount;

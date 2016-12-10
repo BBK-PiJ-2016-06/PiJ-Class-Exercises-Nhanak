@@ -7,7 +7,6 @@ public class Q1b {
     if (file == null || file.list().length == 0) {
       System.out.println("Error!");
     } else {
-      // System.out.println(file.list()[0]);
       String[] list = file.list();
       for (String item: list) {
         System.out.println(item);

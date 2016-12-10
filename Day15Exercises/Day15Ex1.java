@@ -41,8 +41,8 @@ public class Day15Ex1 {
 }
 
 /** Order of execution:
-• userInput is 0: 0-33 runs. 34 interrupted. 36-41 runs.
-• userInput is 2: 0-29 runs. 31 inerrupted. 36-41 runs.
-• userInput is 4: 0-26 runs. 27 interrupted. 36-41 runs.
-• userInput is 6. 0-22 runs. 23 interrupted. 36-41 runs. 
+• userInput is 0: 0-33 runs. 34 interrupted. 36-38 runs.
+• userInput is 2: 0-29 runs. 31 inerrupted. 36-38 runs.
+• userInput is 4: 0-26 runs. 27 interrupted. 36-38 runs.
+• userInput is 6. 0-22 runs. 23 interrupted. 36-38 runs.
 */

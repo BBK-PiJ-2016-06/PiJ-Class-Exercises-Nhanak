@@ -1,12 +1,4 @@
-/* (*) Create a static method called transformedList. It should take a List of
-Strings and a Function<String,String> and return a new List that contains the
-results of applying the function to each element of the original list. For example:
-List<String> excitingWords =
-StringUtils.transformedList(words, s -> s + "!");
-List<String> eyeWords =
-StringUtils.transformedList(words, s -> s.replace("i", "eye"));
-List<String> upperCaseWords =
-StringUtils.transformedList(words, String::toUpperCase); */
+
 import java.util.List;
 import java.util.ArrayList;
 import java.util.function.Function;
